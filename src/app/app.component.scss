@@ -1,0 +1,75 @@
+.wrap {
+    --pcolor: #1b1b1b;
+
+    font-size: 18px;
+    text-decoration: none;
+    color: var(--pcolor);
+
+
+    .container{
+        max-width: 1200px;
+        margin: 0 auto;
+        
+    }
+
+    .flex{
+        display: flex;
+        
+    }
+    a, button {
+        cursor: pointer;
+    }
+
+
+    header {
+        padding: 20px 0;
+        font-weight: 500;
+
+        .menu {
+            @extend .flex;
+            gap: 20px;
+
+            a {
+                border-bottom: 1px solid transparent;
+                padding-bottom: 4px;
+                transition: all .4s;
+
+                &:hover, &.active{
+                    border-bottom: 1px solid var(--pcolor);
+                }
+
+                &.border1 {
+                    border: 0;
+                    transition: all 0.3s ease;
+                }
+                &:hover {
+                    transform: scale(1.1); // Hiệu ứng phóng to khi hover
+                }
+                
+                fa-icon {
+                    font-size: 34px; 
+                    color: var(--pcolor); 
+                    padding: 2px;
+                }
+            }
+
+
+        }
+
+        .logo {
+            background-color: var(--pcolor);
+            padding: 14px;
+            border-radius: 50%;
+            font-size: 24px;
+            font-weight: 800;
+            color: #fff;
+            transition: all .5s;
+            cursor: pointer;
+            background: linear-gradient(var(--pcolor), var(--pcolor), var(--pcolor));
+
+            &:hover{
+                background: linear-gradient(red, green, orange, yellow);
+            }
+        }
+    }
+}
