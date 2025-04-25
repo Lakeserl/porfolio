@@ -1,34 +1,213 @@
 <div class="wrap">
   <div class="container">
-    <header fxFlex="100%" fxLayout="row" fxLayoutGap="15px" fxLayoutAlign="space-between center">
-      <div class="menu">
-        <a class="active">Home</a>
-        <a >About</a>
-        <a >Project</a>
-        <a >Article</a>
-      </div>
-      <div class="logo">CV</div >
-      <div class="menu">
-        <a class="border1" href="https://www.facebook.com/profile.php?id=100075990096267"><fa-icon [icon]="faFacebook"></fa-icon></a>
-        <a class="border1" href="https://github.com/Lakeserl"><fa-icon [icon]="faGithub"></fa-icon></a>
-        <a class="border1" href=""><fa-icon [icon]="faMoon"></fa-icon></a> 
-      </div>
-    </header>
+    <div fxFlex="100%" fxLayout="column" fxLayoutGap="15px">
+      <header
+        fxFlex="100%"
+        fxLayout="row"
+        fxLayout.lt-sm="column"
+        fxLayoutGap="15px"
+        fxLayoutAlign="space-between center"
+      >
+        <div class="menu" fxFlex="100%" fxLayoutGap.lt-sm="20px">
+          <a [ngClass]="{'active': view === 'home'}" (click)="handleView('home')">Home</a>
+          <a [ngClass]="{'active': view === 'about'}" (click)="handleView('about')">About</a>
+          <a [ngClass]="{'active': view === 'project'}" (click)="handleView('projects')">Project</a>
+          <a (click)="handleView('article')">Article</a>
+        </div>
+        <div fxFlex="100%" fxLayoutAlign="center center"><div class="logo">CV</div></div>
+        <div class="menu" fxFlex="100%" fxLayoutAlign="end center" fxHide.lt-sm>
+          <a
+            class="border1"
+            href="https://www.facebook.com/profile.php?id=100075990096267"
+            target="_blank"
+            ><fa-icon [icon]="faFacebook"></fa-icon
+          ></a>
+          <a class="border1" href="https://github.com/Lakeserl" target="_blank"
+            ><fa-icon [icon]="faGithub"></fa-icon
+          ></a>
+          <a class="border1"><fa-icon [icon]="faMoon"></fa-icon></a>
+        </div>
+      </header>
 
-    <div class="content">
-      <div>
-        <img src="/assets/images/MyImages.jpg" alt="" width="100%">
-      </div>
-      <div>
-        <h1>Hello World, I'm Lakeserl</h1>
-        <p>I am a motivated and fast-learning individual seeking a back-end development internship. 
-          I’m passionate about writing clean, efficient code and always looking to improve my skills in modern 
-          backend technologies such as Node.js and Spring Boot.</p>
-        <button>
-          Resume
-        </button>
-        <a >Contract</a>
-      </div>
+      <ng-container *ngIf="view === 'home'">
+        <div class="content" fxFlex="100%" fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="30px">
+          <div
+            fxFlex="30%"
+            fxLayout="column"
+            fxLayoutAlign="center center"
+
+          >
+            <img
+              class="profile-image"
+              src="images2.jpg"
+              alt="Profile Image"
+              width="100%"
+            />
+          </div>
+          <div fxFlex="70%" fxLayout="column" fxLayoutAlign="center start">
+            <h1>Hello World.</h1>
+            <h2>I'm Lakeserl</h2>
+            <p>
+              I am Lam, I’m a beginner back-end developer with experience in
+              Python and Java, and I’m learning Angular to support front-end
+              work. I'm passionate about coding and eager to improve by working
+              on real-world projects.
+            </p>
+            <div class="btn-wrap">
+              <button class="primary">
+                Resume
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                  <!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+                  <path
+                    d="M288 32c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 242.7-73.4-73.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l128 128c12.5 12.5 32.8 12.5 45.3 0l128-128c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L288 274.7 288 32zM64 352c-35.3 0-64 28.7-64 64l0 32c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-32c0-35.3-28.7-64-64-64l-101.5 0-45.3 45.3c-25 25-65.5 25-90.5 0L165.5 352 64 352zm368 56a24 24 0 1 1 0 48 24 24 0 1 1 0-48z"
+                  />
+                </svg>
+              </button>
+              <a>Contact</a>
+            </div>
+          </div>
+        </div>
+      </ng-container>
+
+      <ng-container *ngIf="view === 'about'">
+        <div
+          class="content"
+          fxFlex="100%"
+          fxLayout="column"
+          fxLayoutGap="70px"
+          fxLayoutGap.gt-sm="30px"
+          fxLayoutAlign="center center"
+          fxLayoutAlign.lt-sm="start start"
+        >
+          <h1 style="font-size: 70px">About me</h1>
+          <div fxFlex="100%" fxLayout="row"  fxLayout.lt-sm="column" fxLayoutGap="60px" fxLayoutGap.gt-sm="30px">
+            <div fxFlex="50%" fxFlex.gt-sm="100%">
+              <h3>Summary</h3>
+              <p>
+                I'm a passionate and fast-learning backend developer with a
+                strong interest in building scalable, secure, and maintainable
+                web applications. Currently, I'm seeking an internship
+                opportunity where I can contribute to real-world projects while
+                improving my skills in modern backend stacks such as
+                <strong>Node.js</strong>, <strong>Express.js</strong>, and
+                <strong>Spring Boot</strong>.
+              </p>
+              <p>
+                I enjoy solving problems, writing clean code, and constantly
+                learning new technologies. My goal is to become a full-stack
+                developer who understands both frontend dynamics and backend
+                architecture.
+              </p>
+              <p>
+                When I’m not coding, I enjoy reading about system design,
+                contributing to small open-source projects, and exploring new
+                tools in the JavaScript and Java ecosystems.
+              </p>
+              <button class="primary">
+                Let's Talk
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                  <!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+                  <path
+                    d="M64 112c-8.8 0-16 7.2-16 16l0 22.1L220.5 291.7c20.7 17 50.4 17 71.1 0L464 150.1l0-22.1c0-8.8-7.2-16-16-16L64 112zM48 212.2L48 384c0 8.8 7.2 16 16 16l384 0c8.8 0 16-7.2 16-16l0-171.8L322 328.8c-38.4 31.5-93.7 31.5-132 0L48 212.2zM0 128C0 92.7 28.7 64 64 64l384 0c35.3 0 64 28.7 64 64l0 256c0 35.3-28.7 64-64 64L64 448c-35.3 0-64-28.7-64-64L0 128z"
+                  />
+                </svg>
+              </button>
+            </div>
+            <div fxFlex="50%" fxFlex.gt-sm="100%">
+              <div class="border-about">
+                <img
+                  class="about-image"
+                  src="images1.jpg"
+                  alt=""
+                  width="100%"
+                />
+              </div>
+            </div>
+          </div>
+
+          <h3>
+            Skills
+          </h3>
+          <ul>
+            <li>Html</li>
+            <li>Css</li>
+            <li>JavaScript</li>
+            <li>Python</li>
+            <li>Java</li>
+            <li>Angular</li>
+            <li>SpringBoot</li>
+            <li>Django</li>
+            <li>FastAPI</li>
+            <!-- <li>MySql</li> -->
+            <li>Sql Server</li>
+            <li>MongoDB</li>
+          </ul>
+        </div>
+      </ng-container>
+
+      <ng-container *ngIf="view === 'project'"> 
+                <div
+          class="content"
+          fxFlex="100%"
+          fxLayout="column"
+          fxLayoutGap="70px"
+          fxLayoutAlign="center center"
+        >
+        <h1>Project</h1>
+        <div fxFlex="100%" fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="60px">
+          <div fxFlex="33.3%" fxFlex.lt-sm="100%" fxLayoutAlign="center">
+            <div class="border-about">
+            </div>
+          </div>
+
+          <div fxFlex="33.3%" fxFlex.lt-sm="100%" fxLayoutAlign="center">
+            <div class="border-about">
+            </div>
+          </div>
+
+          <div fxFlex="33.3%" fxFlex.lt-sm="100%" fxLayoutAlign="center">
+            <div class="border-about">
+            </div>
+          </div>
+         </div>
+
+          <div fxFlex="100%" fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="60px">
+          <div fxFlex="33.3%" fxFlex.lt-sm="100%" fxLayoutAlign="center">
+            <div class="border-about">
+            </div>
+          </div>
+
+                    <div fxFlex="33.3%" fxFlex.lt-sm="100%" fxLayoutAlign="center">
+            <div class="border-about">
+            </div>
+          </div>
+
+                    <div fxFlex="33.3%" fxFlex.lt-sm="100%" fxLayoutAlign="center">
+            <div class="border-about">
+            </div>
+          </div>
+         </div>
+
+          <div fxFlex="100%" fxLayout.lt-sm="column" fxLayout="row" fxLayoutGap="60px">
+          <div fxFlex="33.3%" fxLayoutAlign="center">
+            <div class="border-about">
+            </div>
+          </div>
+
+                    <div fxFlex="33.3%" fxFlex.lt-sm="100%" fxLayoutAlign="center">
+            <div class="border-about">
+            </div>
+          </div>
+
+                    <div fxFlex="33.3%" fxFlex.lt-sm="100%" fxLayoutAlign="center">
+            <div class="border-about">
+            </div>
+          </div>
+         </div>
+        </div>
+      </ng-container>
+
+      <ng-container *ngIf="view === 'article'"> </ng-container>
     </div>
   </div>
-</div> 
+</div>

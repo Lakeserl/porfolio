@@ -1,0 +1,122 @@
+.wrap {
+  --pcolor: #1b1b1b;
+  font-size: 18px;
+  text-decoration: none;
+  color: var(--pcolor);
+}
+.wrap .container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.wrap .flex, .wrap .content .btn-wrap, .wrap header .menu, .wrap button {
+  display: flex;
+}
+.wrap a,
+.wrap button {
+  cursor: pointer;
+  transform: translateX(0);
+  transition: all 0.5s;
+}
+.wrap a:hover,
+.wrap button:hover {
+  transform: translateX(5px);
+}
+.wrap button {
+  padding: 12px 24px;
+  border: 1px solid transparent;
+  outline: none;
+  border-radius: 8px;
+  gap: 12px;
+  font-size: 16px;
+  font-weight: 600;
+}
+.wrap button.primary {
+  background-color: var(--pcolor);
+  color: #fff;
+}
+.wrap button.primary svg {
+  fill: #fff;
+  width: 18px;
+}
+.wrap button.primary:hover {
+  background-color: transparent;
+  color: var(--pcolor);
+  border-color: var(--pcolor);
+}
+.wrap button.primary:hover svg {
+  fill: var(--pcolor);
+}
+.wrap header {
+  padding: 20px 0;
+  font-weight: 500;
+}
+.wrap header .menu {
+  gap: 20px;
+}
+.wrap header .menu a {
+  border-bottom: 1px solid transparent;
+  padding-bottom: 4px;
+  transition: all 0.4s;
+  transform: translateX(0);
+}
+.wrap header .menu a:hover, .wrap header .menu a.active {
+  border-bottom: 1px solid var(--pcolor);
+}
+.wrap header .menu a.border1 {
+  border: 0;
+  transition: all 0.3s ease;
+}
+.wrap header .menu a fa-icon {
+  font-size: 25px;
+  padding: 2px;
+}
+.wrap header .logo {
+  background-color: var(--pcolor);
+  padding: 14px;
+  border-radius: 50%;
+  font-size: 20px;
+  font-weight: 800;
+  color: #fff;
+  transition: all 0.5s;
+  cursor: pointer;
+  background: linear-gradient(var(--pcolor), var(--pcolor), var(--pcolor));
+}
+.wrap header .logo:hover {
+  background: linear-gradient(red, green, orange, yellow);
+}
+.wrap .content h1 {
+  margin: 70px 0 30px;
+  font-size: 60px;
+  line-height: 45px;
+}
+.wrap .content p {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 30px;
+  margin: 0 0 30px;
+}
+.wrap .content .profile-image {
+  width: 250px;
+  height: 250px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 50%;
+  border: 1px solid #000;
+}
+.wrap .content .btn-wrap {
+  gap: 20px;
+  align-items: center;
+}
+.wrap .content .btn-wrap a {
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: underline;
+}
+.wrap .content h5 {
+  margin: 0 0 20px;
+  font-size: 25px;
+  text-shadow: antiquewhite;
+}
+.wrap .content .border-about {
+  border: 1px solid;
+}/*# sourceMappingURL=app.component.css.map */

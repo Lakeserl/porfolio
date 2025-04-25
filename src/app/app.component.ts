@@ -8,7 +8,7 @@ import {FlexLayoutModule} from '@ngbracket/ngx-layout'
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, FontAwesomeModule, FlexLayoutModule],
+  imports: [CommonModule, FontAwesomeModule, FlexLayoutModule, CommonModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
@@ -17,4 +17,10 @@ export class AppComponent {
   faFacebook = faFacebook;
   faGithub = faGithub;
   faMoon = faMoon;
+
+
+  view: any = 'home'
+  handleView(view: any) {
+    this.view = view;
+  }
 }
